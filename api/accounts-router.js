@@ -19,7 +19,6 @@ router.get('/:id', (req, res) => {
     .where('id', req.params.id)
     .then(account => {
       if (account) {
-        console.log(account)
         res.status(200).json(account[0])
       } else {
         res.status(404).json({ message: 'Account not found' })
