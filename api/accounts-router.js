@@ -19,13 +19,14 @@ router.get('/:id', (req, res) => {
     .where('id', req.params.id)
     .then(account => {
       if (account) {
-        res.send(200).json(account)
+        console.log(account)
+        res.status(200).json(account[0])
       } else {
-        res.send(404).json({ message: 'Account not found' })
+        res.status(404).json({ message: 'Account not found' })
       }
     })
     .catch(err => {
-      res.send(500).json({ message: 'Unable to retrieve account' })
+      res.status(500).json({ message: 'Unable to retrieve account' })
     })
 })
 
