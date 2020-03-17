@@ -1,6 +1,6 @@
 const express = require("express");
 
-const accounts = require('./accounts-router')
+const AccountsRouter = require('./accounts-router')
 
 const server = express();
 
@@ -10,6 +10,6 @@ server.get('/', (req, res) => {
   res.send(`<h1>Practice Api</h1>`)
 })
 
-server.use('/api/accounts', accounts)
+server.use('/api/accounts', AccountsRouter)
 
 module.exports = server;
